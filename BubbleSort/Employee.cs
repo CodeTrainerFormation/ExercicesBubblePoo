@@ -9,12 +9,17 @@ namespace BubbleSort
     internal class Employee : Person
     {
         #region Fields
-        private static int counter = 0;
+        private static int counter;
         private readonly int employeeId;
         public int Seniority { get; set; }
         #endregion
 
         #region Constructors
+        static Employee()
+        {
+            Employee.counter = 0;
+        }
+
         public Employee()
             : this("Ted", "Mosby", 30, 3)
         {

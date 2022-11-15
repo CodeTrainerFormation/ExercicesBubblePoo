@@ -30,7 +30,6 @@ namespace BubbleSort
             if (value == 0)
                 value = p1.FirstName.CompareTo(p2.FirstName);
 
-
             if (this.isAscendant)
                 return value;
             else
