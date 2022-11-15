@@ -11,7 +11,7 @@ namespace BubbleSort
         #region Fields
         private static int counter = 0;
         private readonly int employeeId;
-        private int seniority;
+        public int Seniority { get; set; }
         #endregion
 
         #region Constructors
@@ -26,7 +26,7 @@ namespace BubbleSort
             //base.FirstName = firstName;
             //base.LastName = lastName;
             //base.Age = age;
-            this.seniority = seniority;
+            this.Seniority = seniority;
             this.employeeId = ++Employee.counter;
 
             //int a = 0;   // a vaut 0
@@ -45,13 +45,13 @@ namespace BubbleSort
 
         public override string ToString()
         {
-            return $"{base.ToString()}, empId: {this.employeeId}, employé depuis {this.seniority} an(s)";
+            return $"{base.ToString()}, empId: {this.employeeId}, employé depuis {this.Seniority} an(s)";
         }
 
         public override void Display()
         {
             base.Display();
-            Console.WriteLine($"{base.ToString()}, empId: {this.employeeId}, employé depuis {this.seniority} an(s)");
+            Console.WriteLine($"{base.ToString()}, empId: {this.employeeId}, employé depuis {this.Seniority} an(s)");
         }
 
         public override void Eat()
