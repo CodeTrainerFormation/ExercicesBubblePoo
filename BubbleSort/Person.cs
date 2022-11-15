@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BubbleSort
 {
-    internal abstract class Person
+    internal abstract class Person : IComparable<Person>
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -34,6 +34,44 @@ namespace BubbleSort
         public override string ToString()
         {
             return $"{this.FirstName} {this.LastName}, {this.Age} yo";
+        }
+
+        //public int CompareTo(object? obj)
+        //{
+        //    if (!(obj is Person))
+        //        throw new InvalidCastException("obj n'est pas une personne");
+
+        //    Person person = (Person)obj;
+
+        //    int value = this.Age - person.Age;
+
+        //    if (value == 0)
+        //        value = this.LastName.CompareTo(person.LastName);
+
+        //    if (value == 0)
+        //        value = this.FirstName.CompareTo(person.FirstName);
+
+        //    return value;
+        //}
+
+        public int CompareTo(Person? person)
+        {
+            int value = this.Age - person.Age;
+
+            if(value == 0)
+                value = this.LastName.CompareTo(person.LastName);
+
+            if(value == 0)
+                value = this.FirstName.CompareTo(person.FirstName);
+
+            return value;
+
+            //if (this.Age > person.Age)
+            //    return 1;
+            //else if (this.Age < person.Age)
+            //    return -1;
+            //else
+            //    return 0;
         }
     }
 }
