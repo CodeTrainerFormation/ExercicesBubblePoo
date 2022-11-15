@@ -1,5 +1,16 @@
 ﻿using BubbleSort;
 
+
+int mySeed = 8;
+int myMaxValue = 20;
+
+int value1 = IntExtension.NextRand(mySeed, myMaxValue);
+
+int value2 = mySeed.NextRand();
+
+
+
+
 //int[] array = { 9, 2, 5, 7, 1, 3, 8, 6, 4 };
 
 
@@ -52,7 +63,11 @@ foreach (Person person in persons)
 }
 
 
-
+TestOptional("hello", 123);
+TestOptional("hello"); // 100
+TestOptional(); // bye, 100
+TestOptional(value: 110, message: "hello world");
+TestOptional(value: 142); // bye
 
 
 
@@ -89,5 +104,10 @@ static void BubbleSort(int[] array)
         marker--;
 
     } while (hasSwapped);
+}
+
+
+static void TestOptional(string message = "bye", int value = 100)
+{
 
 }
