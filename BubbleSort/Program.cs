@@ -42,7 +42,8 @@ foreach (Person person in persons)
     Console.WriteLine(person);
 }
 
-Array.Sort(persons);
+//Array.Sort(persons); // IComparable
+Array.Sort(persons, new PersonComparer(false));
 Console.WriteLine($"{Environment.NewLine}--------");
 
 foreach (Person person in persons)
