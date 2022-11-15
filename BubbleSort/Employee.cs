@@ -38,7 +38,7 @@ namespace BubbleSort
         #endregion
 
         #region Methods
-        public void DoWork()
+        public virtual void DoWork()
         {
             Console.WriteLine("Je travaille");
         }
