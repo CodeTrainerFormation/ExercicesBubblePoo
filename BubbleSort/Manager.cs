@@ -10,10 +10,16 @@ namespace BubbleSort
     {
         public string Zone { get; set; }
 
-        //public Manager()
-        //    : base()
-        //{
-        //}
+        public Manager(string firstName = "Bebert", string lastName = "Simpson", int age = 30, int seniority = 0, string zone = "inconnue")
+            : base(firstName, lastName, age, seniority)
+        {
+            //this.FirstName = firstName;
+            //this.LastName = lastName;
+            //this.Age = age;
+            //this.Seniority = seniority;
+            this.Zone = zone;
+        }
+
         public override void DoWork()
         {
             base.DoWork();
@@ -34,6 +40,23 @@ namespace BubbleSort
         public override void Eat()
         {
             Console.WriteLine("mange au restaurant");
+        }
+
+        public override bool Equals(object? obj)
+        {
+            if (!(obj is Manager))
+                return false;
+
+            Manager manager = (Manager) obj;
+
+            if (manager.FirstName == this.FirstName
+              && manager.LastName == this.LastName
+              && manager.Age == this.Age
+              && manager.Seniority == this.Seniority
+              && manager.Zone == this.Zone)
+                return true;
+            else
+                return false;
         }
     }
 }

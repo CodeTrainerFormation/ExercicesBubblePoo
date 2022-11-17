@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BubbleSort
 {
-    internal abstract class Person : IComparable<Person>
+    public abstract class Person : IComparable<Person>
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
